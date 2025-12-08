@@ -9,7 +9,7 @@ git config --global user.email "ton-email"
 
 ## Cloner le projet
 git clone https://github.com/fedijerbi1/projetweb.git
-cd projetweb
+;cd projetweb
 
 ## Créer/aller dans une branche
 git checkout -b nom-branche
