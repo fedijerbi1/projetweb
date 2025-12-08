@@ -16,7 +16,7 @@ git checkout -b nom-branche
 
 ## Ajouter + Commit (sauvegarder modifications)
 git add .
-git commit -m "message"
+;git commit -m "message"
 
 ## Envoyer (push)
 git push origin nom-branche
