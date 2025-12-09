@@ -18,7 +18,20 @@
             icon: 'info',
             confirmButtonText: 'Close'
         });
-    });
+    }); 
+function test(event){ 
+    event.preventDefault () ;  
+const name = document.getElementById ("name") ; 
+if (name.value==="" ){
+    Swal.fire ({
+        title : 'Nom Vider' , 
+        text:'veuillez entrer Voter Nom ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ;  
+}  
+} 
 </script>
  </head>
 
@@ -30,7 +43,25 @@
         <a href="#about">About</a> |
         <a href="#services">Services</a> |
         <a href="./contact.html">Contact</a> 
-   </nav> 
+   </nav>  
+   <form> 
+    <lable>Destination : </lable> 
+    <input id ="destination" required /> 
+    <label>Date De Depart </label> 
+   <input type ="date" id ="date1"/> 
+   <label>Date de Retour </label> 
+   <input type="date" id ="date2"/> 
+   <label>Nomber de Voyageur </label> 
+   <input type="number" id="number" value="0"/>   
+   <label>Nom : </label> 
+   <input type = "text" id="name"/>   
+   <label>Email </label> 
+   <input type="email" id="email" /> 
+
+   
+   <button type="submit" onclick="test(event)">Test </button>
+
+   </form>
    </header> 
    <footer> 
     
