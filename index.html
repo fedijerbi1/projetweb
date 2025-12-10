@@ -22,6 +22,12 @@
 function test(event){ 
     event.preventDefault () ;  
 const name = document.getElementById ("name") ; 
+const  destination = document.getElementById ("destination") ; 
+const date1 = document.getElementById ("date1") ;
+const date2 = document.getElementById ("date2") ;
+const number = document.getElementById ("number") ; 
+const email = document.getElementById ("email") ; 
+
 if (name.value==="" ){
     Swal.fire ({
         title : 'Nom Vider' , 
@@ -30,7 +36,120 @@ if (name.value==="" ){
         confirmButtonText : 'Fermer'
 
     }) ;  
+} else if (destination.value===""){ 
+    Swal.fire ({
+        title : 'Destination Vider' , 
+        text:'veuillez entrer Voter Destination ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ;
+} else if (date1.value===""){ 
+    Swal.fire ({
+        title : 'Date De Depart Vider' , 
+        text:'veuillez entrer Voter Date De Depart ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ; 
+} else if (date2.value===""){ 
+    Swal.fire ({
+        title : 'Date De Retour Vider' , 
+        text:'veuillez entrer Voter Date De Retour ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ; 
+} else if (number.value===""){ 
+    Swal.fire ({
+        title : 'Nombre de Voyageur Vider' , 
+        text:'veuillez entrer Voter Nombre de Voyageur ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ; 
+} else if (email.value===""){ 
+    Swal.fire ({
+        title : 'Email Vider' , 
+        text:'veuillez entrer Voter Email ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ;  }
+    else if (!email.value.includes ("@")){ 
+        Swal.fire ({
+            title : 'Email Invalide' , 
+            text:'veuillez entrer Voter Email Valide ' ,  
+            icon :'error' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; } 
+        else if (Number (number.value) <=0 ){ 
+            Swal.fire ({
+                title : 'Nombre de Voyageur Invalide' , 
+                text:'veuillez entrer Voter Nombre de Voyageur Valide ' ,  
+                icon :'error' , 
+                confirmButtonText : 'Fermer'
+    
+            }) ; } 
+        else if (new Date (date2.value) <= new Date (date1.value) ){ 
+            Swal.fire ({
+                title : 'Dates Invalide' , 
+                text:'La date de retour doit être postérieure à la date de départ ' ,  
+                icon :'error' , 
+                confirmButtonText : 'Fermer'
+    
+            }) ; } 
+            else if (new Date (date1.value) < new Date ()){ 
+                Swal.fire ({
+                    title : 'Date de Depart Invalide' , 
+                    text:'La date de départ doit être une date future ' ,  
+                    icon :'error' , 
+                    confirmButtonText : 'Fermer'
+        
+                }) ; } 
+            else if (email.value=== ""&& name.value==="" && destination.value==="" && date1.value==="" && date2.value==="" && number.value==="" ){  
+    Swal.fire ({
+        title : 'Formulaire Vider' ,
+        text:'Veuillez remplir le formulaire avant de le soumettre ' ,
+        icon :'error' ,
+        confirmButtonText : 'Fermer'
+}) ; }  
+
+else { 
+    Swal.fire ({
+        title : 'Succès' , 
+        text:'Votre formulaire a été soumis avec succès ! ' ,  
+        icon :'success' , 
+        confirmButtonText : 'Fermer'
+
+    }).then (()=>{ 
+        duration = (new Date (date2.value) - new Date (date1.value)) / (1000 * 60 * 60 *24) ;
+        const planning = {
+            name : name.value ,  
+            duration : duration , 
+            destination : destination.value , 
+            dateDeDepart : date1.value , 
+            dateDeRetour : date2.value , 
+            nombreDeVoyageur : number.value , 
+            email : email.value 
+        } ; 
+        const planningHtml = `<h2>Votre Planification de Voyage</h2> 
+    <p><strong>Nom :</strong>  ${planning.name} </p>` 
+    + `<p><strong>Destination :</strong>  ${planning.destination} </p>`
+    + `<p><strong>Date De Depart :</strong>  ${planning.dateDeDepart} </p>`
+    + `<p><strong>Date De Retour :</strong>  ${planning.dateDeRetour}
+    </p>`
+    + `<p><strong>Nombre de Voyageur :</strong>  ${planning.nombreDeVoyageur} </p>`
+    + `<p><strong>Durée du Voyage (en jours) :</strong>  ${planning.duration} </p>`
+    + `<p><strong>Email :</strong>  ${planning.email} </p>` ;
+    document.getElementById ("planningResult").innerHTML = planningHtml ; 
+    }  
+    ) ; 
+    
+
 }  
+ 
 } 
 </script>
  </head>
@@ -43,8 +162,10 @@ if (name.value==="" ){
         <a href="#about">About</a> |
         <a href="#services">Services</a> |
         <a href="./contact.html">Contact</a> 
-   </nav>  
-   <form> 
+   </nav>   
+   <div class="contrainer"> 
+   <h1>Planifiez Votre Voyage </h1>
+   <form id ="reservationForm"> 
     <lable>Destination : </lable> 
     <input id ="destination" required /> 
     <label>Date De Depart </label> 
@@ -56,12 +177,14 @@ if (name.value==="" ){
    <label>Nom : </label> 
    <input type = "text" id="name"/>   
    <label>Email </label> 
-   <input type="email" id="email" /> 
+   <input type="email" id="email" required /> 
 
    
-   <button type="submit" onclick="test(event)">Test </button>
+   <button type="submit" onclick="test(event)">Generer Votre plantification </button> 
+   <div id ="planningResult"></div> 
 
-   </form>
+   </form> 
+    </div> 
    </header> 
    <footer> 
     
