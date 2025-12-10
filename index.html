@@ -26,7 +26,9 @@ const  destination = document.getElementById ("destination") ;
 const date1 = document.getElementById ("date1") ;
 const date2 = document.getElementById ("date2") ;
 const number = document.getElementById ("number") ; 
-const email = document.getElementById ("email") ; 
+const email = document.getElementById ("email") ;  
+const budget = document.getElementById ("budget") ; 
+
 
 if (name.value==="" ){
     Swal.fire ({
@@ -132,7 +134,8 @@ else {
             dateDeDepart : date1.value , 
             dateDeRetour : date2.value , 
             nombreDeVoyageur : number.value , 
-            email : email.value 
+            email : email.value , 
+            budget : budget.value 
         } ; 
         const planningHtml = `<h2>Votre Planification de Voyage</h2> 
     <p><strong>Nom :</strong>  ${planning.name} </p>` 
@@ -142,10 +145,11 @@ else {
     </p>`
     + `<p><strong>Nombre de Voyageur :</strong>  ${planning.nombreDeVoyageur} </p>`
     + `<p><strong>Durée du Voyage (en jours) :</strong>  ${planning.duration} </p>`
-    + `<p><strong>Email :</strong>  ${planning.email} </p>` ;
+    + `<p><strong>Email :</strong>  ${planning.email} </p>` +
+    `<p><strong>Budget Total (en USD) :</strong>  ${planning.budget} </p>` ;
     document.getElementById ("planningResult").innerHTML = planningHtml ; 
     }  
-    ) ; 
+    ) ;  
     
 
 }  
@@ -165,15 +169,21 @@ else {
    </nav>   
    <div class="contrainer"> 
    <h1>Planifiez Votre Voyage </h1>
-   <form id ="reservationForm"> 
-    <lable>Destination : </lable> 
+   <form id ="reservationForm">  
+    <h2>Destination&Date</h2>
+    <label>Destination : </label> 
     <input id ="destination" required /> 
     <label>Date De Depart </label> 
    <input type ="date" id ="date1"/> 
    <label>Date de Retour </label> 
    <input type="date" id ="date2"/> 
-   <label>Nomber de Voyageur </label> 
-   <input type="number" id="number" value="0"/>   
+   <label>Nombre de Voyageur </label>  
+   
+   <input type="number" id="number" value="0"/> 
+   <h2>Budget</h2> 
+   <label>Budget Total (en USD) : </label> 
+   <input type="number" id="budget" value="0"/>  
+   <h2>Informations Personnelles </h2>   
    <label>Nom : </label> 
    <input type = "text" id="name"/>   
    <label>Email </label> 
