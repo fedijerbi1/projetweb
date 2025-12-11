@@ -18,7 +18,28 @@
             icon: 'info',
             confirmButtonText: 'Close'
         });
-    }); 
+    });  
+    const Iternite = { "Patagonie": ["Arrivée à El Calafate + balade ville","Glacier Perito Moreno","Navigation Lago Argentino + icebergs","Route vers El Chaltén","Trek Fitz Roy","Autres sentiers (Laguna Torre)","Retour El Calafate + départ"] , 
+"Islande" :["Arrivée à Reykjavik + visite ville","Cercle d'Or (Geysir, Gullfoss, Thingvellir)","Côte Sud (Seljalandsfoss, Skógafoss, Reynisfjara)","Jökulsárlón + Diamond Beach","Skaftafell (randonnée vers Svartifoss)","Retour à Reykjavik + départ"] , "Tokyo": ["Arrivée à Tokyo + visite ville","Asakusa et Sensō-ji","Shibuya et Harajuku","Excursion à Nikko","Visite de Kamakura","Journée à Disneyland Tokyo","Retour + départ"] ,
+"Barcelone":  ["Arrivée à Barcelone + visite ville","La Sagrada Família et Parc Güell","Quartier Gothique et La Rambla","Montjuïc et Fontaines Magiques","Excursion à Montserrat","Plage de la Barceloneta","Retour + départ"] ,
+ "Santorin" :  ["Arrivée à Fira + visite ville","Excursion à Oia","Plage de Kamari ou Perissa","Visite des vignobles locaux","Randonnée Fira à Oia","Coucher de soleil à Oia","Retour + départ"] ,
+ "Istanbul" : ["Arrivée à Istanbul + visite ville","Sainte-Sophie et Mosquée Bleue","Palais de Topkapi","Bazar Égyptien et Grand Bazar","Croisière sur le Bosphore","Quartier de Galata et Tour de Galata","Retour + départ"] , 
+"CostaRica": ["Arrivée à San José + visite ville","Parc National Manuel Antonio","Aventure à Monteverde (ponts suspendus, tyrolienne)","Volcan Arenal et sources chaudes","Plage de Tamarindo","Retour à San José + départ"] ,
+ "Florence" : ["Arrivée à Florence + visite ville","Cathédrale Santa Maria del Fiore","Galerie des Offices","Palais Pitti et Jardins de Boboli","Excursion à Pise","Dégustation de vin en Toscane","Retour + départ"] 
+} ; 
+function afficherIternite (destination,duree){ 
+    const activities  = Iternite[destination] ; 
+    var iterniteHtml = `<h2>Itinéraire suggéré pour ${destination} (${duree} jours)</h2><ul>` ; 
+    for (let i=0 ; i< duree ; i++) { 
+        if (i<activities.length) { 
+        iterniteHtml += `<li>Jour ${i+1} : ${activities[i]}</li>` ; 
+    } 
+    else { 
+        iterniteHtml += `<li>Jour ${i+1} : Journée libre - exploration à votre rythme</li>` ; 
+    }
+    } 
+    return iterniteHtml ; 
+}
 function test(event){ 
     event.preventDefault () ;  
 const name = document.getElementById ("name") ; 
@@ -29,7 +50,7 @@ const number = document.getElementById ("number") ;
 const email = document.getElementById ("email") ;  
 const budget = document.getElementById ("budget") ; 
 const duration = (new Date (date2.value) - new Date (date1.value)) / (1000 * 60 * 60 *24) ; 
-const avg = Number (budget.value) / Number (duration) ; 
+const avg = Number (budget.value) / Number (duration) ;  
 
 if (name.value==="" ){
     Swal.fire ({
@@ -232,7 +253,8 @@ if (avg <100) {
             email : email.value , 
             budget : budget.value , 
             category : category 
-        } ; 
+        } ;  
+        const activite =  afficherIternite (planning.destination,planning.duration) ; 
         const planningHtml = `<h2>Votre Planification de Voyage</h2> 
     <p><strong>Nom :</strong>  ${planning.name} </p>` 
     + `<p><strong>Destination :</strong>  ${planning.destination} </p>`
@@ -243,7 +265,8 @@ if (avg <100) {
     + `<p><strong>Nombre de Voyageur :</strong>  ${planning.nombreDeVoyageur} </p>`
     + `<p><strong>Durée du Voyage (en jours) :</strong>  ${planning.duration} </p>`
     + `<p><strong>Email :</strong>  ${planning.email} </p>` +
-    `<p><strong>Budget Total (en USD) :</strong>  ${planning.budget} </p>` ;
+    `<p><strong>Budget Total (en USD) :</strong>  ${planning.budget} </p>`  
+    + activite;
     document.getElementById ("planningResult").innerHTML = planningHtml ; 
     }  
     ) ;  
