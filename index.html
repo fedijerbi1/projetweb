@@ -28,7 +28,8 @@ const date2 = document.getElementById ("date2") ;
 const number = document.getElementById ("number") ; 
 const email = document.getElementById ("email") ;  
 const budget = document.getElementById ("budget") ; 
-
+const duration = (new Date (date2.value) - new Date (date1.value)) / (1000 * 60 * 60 *24) ; 
+const avg = Number (budget.value) / Number (duration) ; 
 
 if (name.value==="" ){
     Swal.fire ({
@@ -116,17 +117,111 @@ if (name.value==="" ){
         text:'Veuillez remplir le formulaire avant de le soumettre ' ,
         icon :'error' ,
         confirmButtonText : 'Fermer'
-}) ; }  
+}) ; } 
+else if (budget.value==="" || Number (budget.value) <=0 ){ 
+    Swal.fire ({
+        title : 'Budget Invalide' , 
+        text:'veuillez entrer Voter Budget Valide ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
 
-else { 
+    }) ; } 
+    else if (destination.value==='Barcelone' && avg <80) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Barcelone, un budget moyen quotidien d'au moins 80 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if (destination.value==='Tokyo' && avg <120) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Tokyo, un budget moyen quotidien d'au moins 120 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Santorin' && avg <130) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Santorin, un budget moyen quotidien d'au moins 130 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Istanbul' && avg <55) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Istanbul, un budget moyen quotidien d'au moins 55 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Costa Rica' && avg <110) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination au Costa Rica, un budget moyen quotidien d'au moins 110 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Islande' && avg <160) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination en Islande, un budget moyen quotidien d'au moins 160 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Patagonie' && avg <120) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Patagonie, un budget moyen quotidien d'au moins 120 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    }  
+    else if (destination.value==='Florence' && avg <100) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Florence, un budget moyen quotidien d'au moins 100 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+   
+ 
+
+else {  
+    console.log (avg) ;
     Swal.fire ({
         title : 'Succès' , 
         text:'Votre formulaire a été soumis avec succès ! ' ,  
         icon :'success' , 
-        confirmButtonText : 'Fermer'
+        confirmButtonText : 'Fermer' 
+    
 
-    }).then (()=>{ 
-        duration = (new Date (date2.value) - new Date (date1.value)) / (1000 * 60 * 60 *24) ;
+    }).then (()=>{  
+        
+      const duration = (new Date (date2.value) - new Date (date1.value)) / (1000 * 60 * 60 *24) ; 
+const avg = Number (budget.value) / Number (duration) ; 
+var category = "" ; 
+if (avg <100) { 
+    category = "Économique" ; 
+} else if (avg >=100 && avg <300) { 
+    category = "Confort" ; 
+} else { 
+    category = "Luxe" ; 
+}
         const planning = {
             name : name.value ,  
             duration : duration , 
@@ -135,14 +230,16 @@ else {
             dateDeRetour : date2.value , 
             nombreDeVoyageur : number.value , 
             email : email.value , 
-            budget : budget.value 
+            budget : budget.value , 
+            category : category 
         } ; 
         const planningHtml = `<h2>Votre Planification de Voyage</h2> 
     <p><strong>Nom :</strong>  ${planning.name} </p>` 
     + `<p><strong>Destination :</strong>  ${planning.destination} </p>`
     + `<p><strong>Date De Depart :</strong>  ${planning.dateDeDepart} </p>`
     + `<p><strong>Date De Retour :</strong>  ${planning.dateDeRetour}
-    </p>`
+    </p>` 
+    + `<p><strong>Catégorie :</strong>  ${planning.category} </p>`
     + `<p><strong>Nombre de Voyageur :</strong>  ${planning.nombreDeVoyageur} </p>`
     + `<p><strong>Durée du Voyage (en jours) :</strong>  ${planning.duration} </p>`
     + `<p><strong>Email :</strong>  ${planning.email} </p>` +
@@ -171,8 +268,19 @@ else {
    <h1>Planifiez Votre Voyage </h1>
    <form id ="reservationForm">  
     <h2>Destination&Date</h2>
-    <label>Destination : </label> 
-    <input id ="destination" required /> 
+    <select id="destination"> 
+    <option value =""  >--Selectionner Votre Destination--</option> 
+    <option value="Patagonie">Patagonie</option>  
+
+    <option value="Islande">Islande</option> 
+    <option value="Tokyo">Tokyo</option> 
+    <option value="Barcelone">Barcelone</option> 
+    <option value="Florence">Florence</option> 
+    <option value="Santorin">Santorin</option>
+    <option value="Istanbul">Istanbul</option> 
+    <option value="Costa Rica">Costa Rica</option>
+
+    </select> 
     <label>Date De Depart </label> 
    <input type ="date" id ="date1"/> 
    <label>Date de Retour </label> 
