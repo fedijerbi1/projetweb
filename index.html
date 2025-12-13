@@ -6,7 +6,11 @@
     <title>Document</title> 
     <link rel="stylesheet" href="style.css">
     <!-- SweetAlert2 CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> 
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 
 <!-- SweetAlert2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
@@ -29,7 +33,8 @@
 } ; 
 function afficherIternite (destination,duree){ 
     const activities  = Iternite[destination] ; 
-    var iterniteHtml = `<h2>Itinéraire suggéré pour ${destination} (${duree} jours)</h2><ul>` ; 
+    var iterniteHtml = `<h2><i class="ri-time-line"></i>
+Itinéraire suggéré pour ${destination} (${duree} jours)</h2><ul>` ; 
     for (let i=0 ; i< duree ; i++) { 
         if (i<activities.length) { 
         iterniteHtml += `<li>Jour ${i+1} : ${activities[i]}</li>` ; 
@@ -255,7 +260,8 @@ if (avg <100) {
             category : category 
         } ;  
         const activite =  afficherIternite (planning.destination,planning.duration) ; 
-        const planningHtml = `<h2>Votre Planification de Voyage</h2>
+        const planningHtml = `<h2><i class="ri-task-line"></i>
+Votre Planification de Voyage</h2>
         <div class="plan"> 
     <p><strong >Voyageur :</strong>  ${planning.name} </p></div>` 
     + `<div class="plan"><p><strong>Destination :</strong>  ${planning.destination} </p></div>`
@@ -293,7 +299,8 @@ if (avg <100) {
    <div class="contrainer"> 
    <h1>Planifiez Votre Voyage </h1>
    <form id ="reservationForm">  
-    <h2>Destination&Date</h2>
+    <h2><span class="ri-map-pin-line"></span>
+Destination&Date</h2>
     <select id="destination"> 
     <option value =""  >--Selectionner Votre Destination--</option> 
     <option value="Patagonie">Patagonie</option>  
@@ -314,10 +321,12 @@ if (avg <100) {
    <label>Nombre de Voyageur </label>  
    
    <input type="number" id="number" value="0"/> 
-   <h2>Budget</h2> 
+   <h2><i class="ri-wallet-3-line"></i>
+
+Budget</h2> 
    <label>Budget Total (en USD) : </label> 
    <input type="number" id="budget" value="0"/>  
-   <h2>Informations Personnelles </h2>   
+   <h2><i class="ri-user-line"></i>Informations Personnelles </h2>   
    <label>Nom : </label> 
    <input type = "text" id="name"/>   
    <label>Email </label> 
