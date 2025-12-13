@@ -1,0 +1,49 @@
+.forma { 
+    padding : 20px ; 
+    box-shadow:  1px 0 px 0px black;
+} 
+#quiz-form label {
+    padding : 20px ; 
+    background-color: aliceblue ; 
+    display :flex ; 
+    border-radius:  5px ;  
+    cursor : pointer ; 
+    transition:  all 0.3s ease ; 
+    border : 2px solid transparent ; 
+
+} 
+#quiz-form input[type="radio"]{ 
+    width: 20px; 
+    margin-top: 5px;
+    height: 15px; 
+    margin-right : 10px ; 
+    cursor :pointer ; 
+} 
+#quiz-form span { 
+    flex : 1px ; 
+} 
+#quiz-form label:hover { 
+    transform:translateY(2px) scale(1.05); 
+    background-color: antiquewhite;
+}  
+#quiz-form h2 { 
+ text-decoration: underline ; 
+ margin-bottom:10px ; 
+ margin-top:  10px;
+} 
+.btn-modern {
+  padding: 12px 28px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(99, 102, 241, 0.45);
+}
