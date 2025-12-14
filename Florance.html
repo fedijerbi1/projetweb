@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence - Informations</title>  
+    <link rel="stylesheet" href="destinationStyle.css">   
+    <link rel="stylesheet" href="style.css"> 
+    
+    <script src="weatherScript.js"></script>
+    <script>
+        window.onload = function() {
+            getWeather("Florence");
+        };
+    </script> 
+</head>
+<body> 
+
+<div class="gallery">
+    <img src="Florence1.jpg"> 
+    <img src="Florence2.jpg"> 
+    <img src="Florence3.jpg"> 
+</div> 
+
+<div class="contrainer">
+    <div id="florence-info">
+
+        <h1>🇮🇹 Florence, Italie</h1>
+
+        <h2>Météo actuelle</h2>
+        <div id="weather-container">
+            <p>Chargement de la météo...</p>
+        </div>
+
+        <h2>Informations générales</h2>
+        <ul>
+            <li><strong>Pays:</strong> Italie</li>
+            <li><strong>Région:</strong> Toscane</li>
+            <li><strong>Population:</strong> ~380 000 habitants</li>
+            <li><strong>Langue:</strong> Italien</li>
+            <li><strong>Monnaie:</strong> Euro (€)</li>
+        </ul> 
+        
+        <h2>Attractions principales</h2>
+        <ul>
+            <li>Duomo</li>
+            <li>Galerie des Offices</li>
+            <li>Pont Vecchio</li>
+            <li>Centre historique</li>
+        </ul>
+
+        <h2>Gastronomie</h2>
+        <ul>
+            <li>Pâtes</li>
+            <li>Pizza</li>
+            <li>Gelato</li>
+        </ul>
+
+        <h2>Conseils de voyage</h2>
+        <ul>
+            <li>Réserver les musées</li>
+            <li>Marcher dans la ville</li>
+            <li>Éviter l’été</li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

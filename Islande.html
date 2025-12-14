@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islande - Informations</title>  
+    <link rel="stylesheet" href="destinationStyle.css">   
+    <link rel="stylesheet" href="style.css"> 
+    
+    <script src="weatherScript.js"></script>
+    <script>
+        window.onload = function() {
+            getWeather("Reykjavik");
+        };
+    </script> 
+</head>
+<body> 
+    <header>
+        <nav>
+            <a href="destination.html">Retour aux destinations</a>
+        </nav>
+    </header>
+
+<div class="gallery">
+    <img src="Islande1.jpg"> 
+    <img src="Islande2.jpg"> 
+    <img src="Islande3.jpg"> 
+</div> 
+
+<div class="contrainer">
+    <div id="iceland-info">
+
+        <h1>🇮🇸 Islande</h1>
+
+        <h2>Météo actuelle</h2>
+        <div id="weather-container">
+            <p>Chargement de la météo...</p>
+        </div>
+
+        <h2>Informations générales</h2>
+        <ul>
+            <li><strong>Pays:</strong> Islande</li>
+            <li><strong>Région:</strong> Europe du Nord</li>
+            <li><strong>Population:</strong> ~370 000 habitants</li>
+            <li><strong>Langue:</strong> Islandais</li>
+            <li><strong>Monnaie:</strong> Couronne islandaise (ISK)</li>
+        </ul> 
+        
+        <h2>Attractions principales</h2>
+        <ul>
+            <li>Geysers</li>
+            <li>Volcans</li>
+            <li>Cascades</li>
+            <li>Aurores boréales</li>
+        </ul>
+
+        <h2>Gastronomie</h2>
+        <ul>
+            <li>Poisson frais</li>
+            <li>Agneau islandais</li>
+            <li>Soupe traditionnelle</li>
+        </ul>
+
+        <h2>Conseils de voyage</h2>
+        <ul>
+            <li>Prévoir des vêtements chauds</li>
+            <li>Louer une voiture</li>
+            <li>Vérifier la météo</li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

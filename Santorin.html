@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santorin - Informations</title>  
+    <link rel="stylesheet" href="destinationStyle.css">   
+    <link rel="stylesheet" href="style.css"> 
+    
+    <script src="weatherScript.js"></script>
+    <script>
+        window.onload = function() {
+            getWeather("Santorini");
+        };
+    </script> 
+</head>
+<body> 
+
+<div class="gallery">
+    <img src="Santorin1.jpg"> 
+    <img src="Santorin2.jpg"> 
+    <img src="Santorin3.jpg"> 
+</div> 
+
+<div class="contrainer">
+    <div id="santorin-info">
+
+        <h1>🇬🇷 Santorin, Grèce</h1>
+
+        <h2>Météo actuelle</h2>
+        <div id="weather-container">
+            <p>Chargement de la météo...</p>
+        </div>
+
+        <h2>Informations générales</h2>
+        <ul>
+            <li><strong>Pays:</strong> Grèce</li>
+            <li><strong>Région:</strong> Mer Égée</li>
+            <li><strong>Population:</strong> ~15 000 habitants</li>
+            <li><strong>Langue:</strong> Grec</li>
+            <li><strong>Monnaie:</strong> Euro (€)</li>
+        </ul> 
+        
+        <h2>Attractions principales</h2>
+        <ul>
+            <li>Villages blancs</li>
+            <li>Couchers de soleil</li>
+            <li>Plages volcaniques</li>
+        </ul>
+
+        <h2>Gastronomie</h2>
+        <ul>
+            <li>Poissons</li>
+            <li>Feta</li>
+            <li>Moussaka</li>
+        </ul>
+
+        <h2>Conseils de voyage</h2>
+        <ul>
+            <li>Visiter hors saison</li>
+            <li>Réserver tôt</li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

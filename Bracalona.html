@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcelona - Informations</title>  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        #barcelona-info {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        } 
+        .gallery img {
+  width: 250px;
+  margin: 10px;
+  border-radius: 12px;
+  transition: transform 0.3s;
+  filter: saturate(1.1) contrast(0.95);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+.gallery img {
+  filter: blur(0.3px) saturate(1.2);
+}
+
+    </style> 
+    <script src="weatherScript.js"></script>
+    <script>
+        window.onload = function() {
+            getWeather("Barcelona");
+        };
+    </script> 
+</head>
+<body>
+    <div id="barcelona-info">
+        <h1>🇪🇸 Barcelone, Espagne</h1>
+        <h2>🌤️ Météo actuelle</h2>
+        <div id="weather-container">
+            <p>Chargement de la météo...</p>
+        </div>
+        <h2>📍 Informations générales</h2>
+        <ul>
+            <li><strong>Pays:</strong> Espagne</li>
+            <li><strong>Région:</strong> Catalogne</li>
+            <li><strong>Population:</strong> ~1.6 million d'habitants</li>
+            <li><strong>Langue:</strong> Catalan et Espagnol</li>
+            <li><strong>Monnaie:</strong> Euro (€)</li>
+        </ul> 
+        <div class="gallery">
+        <img src="Barca1.jpg"> 
+        <img src="Barca2.jpg"> 
+        <img src="Barca3.jpg"> 
+</div>
+        <h2>🏛️ Attractions principales</h2>
+        <ul>
+            <li>⛪ Sagrada Família - Chef-d'œuvre de Gaudí</li>
+            <li>🏞️ Park Güell - Parc architectural coloré</li>
+            <li>🏠 Casa Batlló - Architecture moderniste</li>
+            <li>🚶 La Rambla - Avenue emblématique</li>
+            <li>🏖️ Plage de Barceloneta</li>
+            <li>⚽ Camp Nou - Stade du FC Barcelona</li>
+        </ul>
+
+        <h2>🍽️ Gastronomie</h2>
+        <ul>
+            <li>Paella - Plat de riz traditionnel</li>
+            <li>Tapas - Petites portions variées</li>
+            <li>Crema Catalana - Dessert emblématique</li>
+            <li>Jamón ibérico - Jambon cru de qualité</li>
+        </ul>
+
+        
+
+        <h2>💡 Conseils de voyage</h2>
+        <ul>
+            <li>🎫 Réservez les billets pour la Sagrada Família à l'avance</li>
+            <li>🚇 Utilisez le métro pour vous déplacer facilement</li>
+            <li>⏰ Meilleure période: Mars-Mai et Septembre-Novembre</li>
+            <li>👮 Attention aux pickpockets dans les zones touristiques</li>
+        </ul>
+    </div>
+
+   
+
+</body>
+</html>
