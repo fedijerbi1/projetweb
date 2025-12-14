@@ -5,7 +5,284 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title> 
     <link rel="stylesheet" href="style.css">
+    <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> 
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+<script > 
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            title: 'Welcome!',
+            text: 'Welcome to our website!',
+            icon: 'info',
+            confirmButtonText: 'Close'
+        });
+    });  
+    const Iternite = { "Patagonie": ["Arrivée à El Calafate + balade ville","Glacier Perito Moreno","Navigation Lago Argentino + icebergs","Route vers El Chaltén","Trek Fitz Roy","Autres sentiers (Laguna Torre)","Retour El Calafate + départ"] , 
+"Islande" :["Arrivée à Reykjavik + visite ville","Cercle d'Or (Geysir, Gullfoss, Thingvellir)","Côte Sud (Seljalandsfoss, Skógafoss, Reynisfjara)","Jökulsárlón + Diamond Beach","Skaftafell (randonnée vers Svartifoss)","Retour à Reykjavik + départ"] , "Tokyo": ["Arrivée à Tokyo + visite ville","Asakusa et Sensō-ji","Shibuya et Harajuku","Excursion à Nikko","Visite de Kamakura","Journée à Disneyland Tokyo","Retour + départ"] ,
+"Barcelone":  ["Arrivée à Barcelone + visite ville","La Sagrada Família et Parc Güell","Quartier Gothique et La Rambla","Montjuïc et Fontaines Magiques","Excursion à Montserrat","Plage de la Barceloneta","Retour + départ"] ,
+ "Santorin" :  ["Arrivée à Fira + visite ville","Excursion à Oia","Plage de Kamari ou Perissa","Visite des vignobles locaux","Randonnée Fira à Oia","Coucher de soleil à Oia","Retour + départ"] ,
+ "Istanbul" : ["Arrivée à Istanbul + visite ville","Sainte-Sophie et Mosquée Bleue","Palais de Topkapi","Bazar Égyptien et Grand Bazar","Croisière sur le Bosphore","Quartier de Galata et Tour de Galata","Retour + départ"] , 
+"CostaRica": ["Arrivée à San José + visite ville","Parc National Manuel Antonio","Aventure à Monteverde (ponts suspendus, tyrolienne)","Volcan Arenal et sources chaudes","Plage de Tamarindo","Retour à San José + départ"] ,
+ "Florence" : ["Arrivée à Florence + visite ville","Cathédrale Santa Maria del Fiore","Galerie des Offices","Palais Pitti et Jardins de Boboli","Excursion à Pise","Dégustation de vin en Toscane","Retour + départ"] 
+} ; 
+function afficherIternite (destination,duree){ 
+    const activities  = Iternite[destination] ; 
+    var iterniteHtml = `<h2><i class="ri-time-line"></i>
+Itinéraire suggéré pour ${destination} (${duree} jours)</h2><ul>` ; 
+    for (let i=0 ; i< duree ; i++) { 
+        if (i<activities.length) { 
+        iterniteHtml += `<li>Jour ${i+1} : ${activities[i]}</li>` ; 
+    } 
+    else { 
+        iterniteHtml += `<li>Jour ${i+1} : Journée libre - exploration à votre rythme</li>` ; 
+    }
+    } 
+    return iterniteHtml ; 
+}
+function test(event){ 
+    event.preventDefault () ;  
+const name = document.getElementById ("name") ; 
+const  destination = document.getElementById ("destination") ; 
+const date1 = document.getElementById ("date1") ;
+const date2 = document.getElementById ("date2") ;
+const number = document.getElementById ("number") ; 
+const email = document.getElementById ("email") ;  
+const budget = document.getElementById ("budget") ; 
+const duration = (new Date (date2.value) - new Date (date1.value)) / (1000 * 60 * 60 *24) ; 
+const avg = Number (budget.value) / Number (duration) ;  
+
+if (name.value==="" ){
+    Swal.fire ({
+        title : 'Nom Vider' , 
+        text:'veuillez entrer Voter Nom ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ;  
+} else if (destination.value===""){ 
+    Swal.fire ({
+        title : 'Destination Vider' , 
+        text:'veuillez entrer Voter Destination ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ;
+} else if (date1.value===""){ 
+    Swal.fire ({
+        title : 'Date De Depart Vider' , 
+        text:'veuillez entrer Voter Date De Depart ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ; 
+} else if (date2.value===""){ 
+    Swal.fire ({
+        title : 'Date De Retour Vider' , 
+        text:'veuillez entrer Voter Date De Retour ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ; 
+} else if (number.value===""){ 
+    Swal.fire ({
+        title : 'Nombre de Voyageur Vider' , 
+        text:'veuillez entrer Voter Nombre de Voyageur ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ; 
+} else if (email.value===""){ 
+    Swal.fire ({
+        title : 'Email Vider' , 
+        text:'veuillez entrer Voter Email ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ;  }
+    else if (!email.value.includes ("@")){ 
+        Swal.fire ({
+            title : 'Email Invalide' , 
+            text:'veuillez entrer Voter Email Valide ' ,  
+            icon :'error' , 
+            confirmButtonText : 'Fermer'
     
+        }) ; } 
+        else if (Number (number.value) <=0 ){ 
+            Swal.fire ({
+                title : 'Nombre de Voyageur Invalide' , 
+                text:'veuillez entrer Voter Nombre de Voyageur Valide ' ,  
+                icon :'error' , 
+                confirmButtonText : 'Fermer'
+    
+            }) ; } 
+        else if (new Date (date2.value) <= new Date (date1.value) ){ 
+            Swal.fire ({
+                title : 'Dates Invalide' , 
+                text:'La date de retour doit être postérieure à la date de départ ' ,  
+                icon :'error' , 
+                confirmButtonText : 'Fermer'
+    
+            }) ; } 
+            else if (new Date (date1.value) < new Date ()){ 
+                Swal.fire ({
+                    title : 'Date de Depart Invalide' , 
+                    text:'La date de départ doit être une date future ' ,  
+                    icon :'error' , 
+                    confirmButtonText : 'Fermer'
+        
+                }) ; } 
+            else if (email.value=== ""&& name.value==="" && destination.value==="" && date1.value==="" && date2.value==="" && number.value==="" ){  
+    Swal.fire ({
+        title : 'Formulaire Vider' ,
+        text:'Veuillez remplir le formulaire avant de le soumettre ' ,
+        icon :'error' ,
+        confirmButtonText : 'Fermer'
+}) ; } 
+else if (budget.value==="" || Number (budget.value) <=0 ){ 
+    Swal.fire ({
+        title : 'Budget Invalide' , 
+        text:'veuillez entrer Voter Budget Valide ' ,  
+        icon :'error' , 
+        confirmButtonText : 'Fermer'
+
+    }) ; } 
+    else if (destination.value==='Barcelone' && avg <80) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Barcelone, un budget moyen quotidien d'au moins 80 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if (destination.value==='Tokyo' && avg <120) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Tokyo, un budget moyen quotidien d'au moins 120 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Santorin' && avg <130) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Santorin, un budget moyen quotidien d'au moins 130 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Istanbul' && avg <55) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Istanbul, un budget moyen quotidien d'au moins 55 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Costa Rica' && avg <110) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination au Costa Rica, un budget moyen quotidien d'au moins 110 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Islande' && avg <160) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination en Islande, un budget moyen quotidien d'au moins 160 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+    else if ( destination.value==='Patagonie' && avg <120) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Patagonie, un budget moyen quotidien d'au moins 120 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    }  
+    else if (destination.value==='Florence' && avg <100) { 
+        Swal.fire ({
+            title : 'Budget Insuffisant' , 
+            text:`Pour une destination à Florence, un budget moyen quotidien d'au moins 100 USD est recommandé. Votre budget moyen quotidien est de ${avg.toFixed(2)} USD.` ,  
+            icon :'warning' , 
+            confirmButtonText : 'Fermer'
+    
+        }) ; 
+    } 
+   
+ 
+
+else {  
+    console.log (avg) ;
+    Swal.fire ({
+        title : 'Succès' , 
+        text:'Votre formulaire a été soumis avec succès ! ' ,  
+        icon :'success' , 
+        confirmButtonText : 'Fermer' 
+    
+
+    }).then (()=>{  
+        
+      const duration = (new Date (date2.value) - new Date (date1.value)) / (1000 * 60 * 60 *24) ; 
+const avg = Number (budget.value) / Number (duration) ; 
+var category = "" ; 
+if (avg <100) { 
+    category = "Économique" ; 
+} else if (avg >=100 && avg <300) { 
+    category = "Confort" ; 
+} else { 
+    category = "Luxe" ; 
+}
+        const planning = {
+            name : name.value ,  
+            duration : duration , 
+            destination : destination.value , 
+            dateDeDepart : date1.value , 
+            dateDeRetour : date2.value , 
+            nombreDeVoyageur : number.value , 
+            email : email.value , 
+            budget : budget.value , 
+            category : category 
+        } ;  
+        const activite =  afficherIternite (planning.destination,planning.duration) ; 
+        const planningHtml = `<h2><i class="ri-task-line"></i>
+Votre Planification de Voyage</h2>
+        <div class="plan"> 
+    <p><strong >Voyageur :</strong>  ${planning.name} </p></div>` 
+    + `<div class="plan"><p><strong>Destination :</strong>  ${planning.destination} </p></div>`
+    + `<div class="plan"><p><strong>Date De Depart :</strong>  ${planning.dateDeDepart} </p></div>`
+    + `<div class="plan"><p><strong>Date De Retour :</strong>  ${planning.dateDeRetour}
+    </p></div>` 
+    + `<div class="plan"><p><strong>Catégorie :</strong>  ${planning.category} </p></div>`
+    + `<div class="plan"><p><strong>Nombre de Voyageur :</strong>  ${planning.nombreDeVoyageur} </p></div>`
+    + `<div class="plan"><p><strong>Durée du Voyage (en jours) :</strong>  ${planning.duration} </p></div>`
+    + `<div class="plan"><p><strong>Email :</strong>  ${planning.email} </p></div>` +
+    `<div class="plan"><p><strong>Budget Total (en USD) :</strong>  ${planning.budget} </p></div>`  
+    + `<div class="plan">${activite}</div>`;
+    document.getElementById ("planningResult").innerHTML = planningHtml ; 
+    }  
+    ) ;  
+    
+
+}  
+ 
+} 
+</script>
  </head>
 
 
@@ -14,15 +291,65 @@
     <nav>  
         <span class="logo">✈️ Travel Planner </span>
         <a href="#home">Home</a> |
+        <a href="QUIZ.html">Quiz</a> |
         <a href="#about">About</a> |
         <a href="#services">Services</a> |
         <a href="./contact.html">Contact</a> 
+<<<<<<< HEAD
    </nav> 
    </header> 
    <div class = "contraint">  
    <h1>Welcome to Travel Planner </h1> 
    <p>Your one-stop solution for all your travel planning needs.</p> 
     </div> 
+=======
+   </nav>   
+    </header>
+   <div class="contrainer"> 
+   <h1>Planifiez Votre Voyage </h1>
+   <form id ="reservationForm">  
+    <h2><span class="ri-map-pin-line"></span>
+Destination&Date</h2>
+    <select id="destination"> 
+    <option value =""  >--Selectionner Votre Destination--</option> 
+    <option value="Patagonie">Patagonie</option>  
+
+    <option value="Islande">Islande</option> 
+    <option value="Tokyo">Tokyo</option> 
+    <option value="Barcelone">Barcelone</option> 
+    <option value="Florence">Florence</option> 
+    <option value="Santorin">Santorin</option>
+    <option value="Istanbul">Istanbul</option> 
+    <option value="Costa Rica">Costa Rica</option>
+
+    </select> 
+    <label>Date De Depart </label> 
+   <input type ="date" id ="date1"/> 
+   <label>Date de Retour </label> 
+   <input type="date" id ="date2"/> 
+   <label>Nombre de Voyageur </label>  
+   
+   <input type="number" id="number" value="0"/> 
+   <h2><i class="ri-wallet-3-line"></i>
+
+Budget</h2> 
+   <label>Budget Total (en USD) : </label> 
+   <input type="number" id="budget" value="0"/>  
+   <h2><i class="ri-user-line"></i>Informations Personnelles </h2>   
+   <label>Nom : </label> 
+   <input type = "text" id="name"/>   
+   <label>Email </label> 
+   <input type="email" id="email" required /> 
+
+   
+   <button type="submit" onclick="test(event)" class="btn-gradient">Generer Votre plantification </button> 
+   </form> 
+    </div> 
+   <div id ="planningResult" class="contrainer"></div> 
+
+  
+
+>>>>>>> fedi
    <footer> 
     
    </footer>

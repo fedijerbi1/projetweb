@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokyo - Informations</title>  
+    <link rel="stylesheet" href="destinationStyle.css">   
+    <link rel="stylesheet" href="style.css"> 
+    
+    <script src="weatherScript.js"></script>
+    <script>
+        window.onload = function() {
+            getWeather("Tokyo");
+        };
+    </script> 
+</head>
+<body> 
+
+<div class="gallery">
+    <img src="tokyo1.jpg"> 
+    <img src="tokyo2.jpg"> 
+    <img src="tokyo3.jpg"> 
+</div> 
+
+<div class="contrainer">
+    <div id="tokyo-info">
+
+        <h1>🇯🇵 Tokyo, Japon</h1>
+
+        <h2>Météo actuelle</h2>
+        <div id="weather-container">
+            <p>Chargement de la météo...</p>
+        </div>
+
+        <h2>Informations générales</h2>
+        <ul>
+            <li><strong>Pays:</strong> Japon</li>
+            <li><strong>Région:</strong> Kanto</li>
+            <li><strong>Population:</strong> ~14 millions d'habitants</li>
+            <li><strong>Langue:</strong> Japonais</li>
+            <li><strong>Monnaie:</strong> Yen (¥)</li>
+        </ul> 
+        
+        <h2>Attractions principales</h2>
+        <ul>
+            <li>Temple Senso-ji</li>
+            <li>Shibuya Crossing</li>
+            <li>Tokyo Tower</li>
+            <li>Quartier Akihabara</li>
+            <li>Palais impérial</li>
+        </ul>
+
+        <h2>Gastronomie</h2>
+        <ul>
+            <li>Sushi</li>
+            <li>Ramen</li>
+            <li>Tempura</li>
+            <li>Takoyaki</li>
+        </ul>
+
+        <h2>Conseils de voyage</h2>
+        <ul>
+            <li>Utiliser le métro pour se déplacer</li>
+            <li>Respecter les règles locales</li>
+            <li>Meilleure période: Mars-Mai et Septembre-Novembre</li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

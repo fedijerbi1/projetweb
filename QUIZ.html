@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ </title> 
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="stylequiz.css"> 
+    <script src="webscript.js" ></script> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet"> 
+</head>
+<body>  
+    <header>
+    <nav> 
+        <a href="#home">Home</a> |
+        <a href="QUIZ.html">Quiz</a> |
+        <a href="#about">About</a> |
+        <a href="#services">Services</a> |
+        <a href="./contact.html">Contact</a> 
+   </nav>   
+    </header> 
+    <div class="tp">
+    <h1>Quiz:  Trouve Voter Destination Ideal </h1> 
+<p>Répondez à quelques questions pour découvrir la destination qui vous correspond</p> 
+</div> 
+<div class="contrainer">
+    <form id="quiz-form">  
+
+        <h2><i class="ri-money-dollar-circle-line"></i>
+Quel est votre budget approximatif ?</h2>
+      <label> 
+        <input type="radio" name="budget" value="economique">
+        <span>Économique</span> 
+         
+        </label>  
+        <label>
+        <input type="radio" name="budget" value="modere">  
+
+        <span>Modéré</span>
+        </label>
+        <label>
+        <input type="radio" name="budget" value="luxueux">
+        <span>Luxueux</span>
+        </label> 
+        <h2><i class="ri-compass-3-line"></i>
+Quel type d'expérience recherchez-vous</h2> 
+        <label>
+        <input type="radio" name="experience" value="aventure">
+        <span>Aventure</span>
+        </label>
+        <label>
+        <input type="radio" name="experience" value="detente">
+        <span>Détente</span>
+        </label> 
+        <label>
+        <input type="radio" name="experience" value="culture">
+        <span>Culture</span>
+        </label>
+        <label>
+        <input type="radio" name="experience" value="gastronomie">
+        <span>Gastronomie</span>
+        </label>
+ <h2><i class="ri-restaurant-line"></i>
+Quelle cuisine vous attire le plus </h2> 
+         <label>
+        <input type="radio" name="cuisine" value="italienne"> 
+        <span>Italienne</span>
+        </label>
+        <label>
+        <input type="radio" name="cuisine" value="japonaise">
+        <span>Japonaise</span>
+        </label>
+        <label>
+        <input type="radio" name="cuisine" value="mexicaine">
+        <span>Mexicaine</span>
+        </label>
+        <label>
+        <input type="radio" name="cuisine" value="francaise">
+        <span>Française</span>
+        </label>
+        <h2><i class="ri-sun-cloudy-line"></i>
+Quel climat préférez-vous</h2> 
+        <label> 
+        <input type="radio" name="climat" value="chaud">
+        <span>Chaud et ensoleillé</span>
+        </label>
+
+        <label>
+        <input type="radio" name="climat" value="tempere">
+        <span>Tempéré</span>
+        </label>
+        <label>
+        <input type="radio" name="climat" value="frais">
+        <span>Frais et montagneux</span>
+        </label>
+        <label>
+        <input type="radio" name="climat" value="variable">
+        <span>Variable</span> 
+        </label> 
+        <h2> <i class="ri-fire-line"></i>
+Qu'est-ce qui vous passionne le plus ?</h2> 
+        <label>
+        <input type="radio" name="passion" value="histoire">
+        <span>Histoire et culture</span>
+        </label>
+
+        <label>
+
+        <input type="radio" name="passion" value="pleinair">
+        <span>Activités de plein air</span>
+        </label>
+        <label>
+        <input type="radio" name="passion" value="shopping">
+        <span>Shopping et vie urbaine</span>
+        </label>
+        <label>
+        <input type="radio" name="passion" value="plage"> 
+        Plages et détente
+        </label>
+        
+            
+        <div class="quiz-progress" id="quizProgress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0;"></div>
+                    </div> 
+                    <p id="progressText">5 Question a reponder </p>
+                    
+                </div>
+            </div>
+      
+     <button type="submit" class="btn-modern">Voir ma destination idéale</button> 
+
+    
+</form>   
+</div> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
