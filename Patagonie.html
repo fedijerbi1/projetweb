@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patagonie - Informations</title>
+    <link rel="stylesheet" href="destinationStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="weatherScript.js"></script>
+    <script>
+        window.onload = function() {
+            getWeather("El Calafate, Argentina");
+        };
+    </script>
+</head>
+<body> 
+    <header>
+        <nav>
+            <a href="destination.html">Retour aux destinations</a>
+        </nav>
+    </header>
+    <div class="gallery">
+        <img src="patagonie1.jpg" alt="Montagnes de la Patagonie">
+        <img src="patagonie2.jpg" alt="Glacier Perito Moreno">
+        <img src="patagonie3.jpg" alt="Torres del Paine">
+    </div>
+    
+    <div class="contrainer">
+        <div id="patagonie-info">
+            <h1>🇦🇷🇨🇱 Patagonie (Argentine/Chili)</h1>
+            
+            <h2>Météo actuelle</h2>
+            <div id="weather-container">
+                <p>Chargement de la météo...</p>
+            </div>
+            
+            <h2>Informations générales</h2>
+            <ul>
+                <li><strong>Région:</strong> Amérique du Sud</li>
+                <li><strong>Pays:</strong> Argentine et Chili</li>
+                <li><strong>Superficie:</strong> ~1 043 000 km²</li>
+                <li><strong>Climat:</strong> Tempéré froid et venteux</li>
+                <li><strong>Monnaies:</strong> Peso argentin ($) et Peso chilien (CLP$)</li>
+            </ul>
+            
+            <h2>Parcs nationaux emblématiques</h2>
+            <ul>
+                <li>Parc national Torres del Paine (Chili) - Tours de granite</li>
+                <li>Parc national Los Glaciares (Argentine) - Glacier Perito Moreno</li>
+                <li>Parc national Tierra del Fuego (Argentine) - Bout du monde</li>
+                <li>Parc national Bernardo O'Higgins (Chili) - Plus grand du Chili</li>
+                <li>Parc national Nahuel Huapi (Argentine) - Lac et montagnes</li>
+            </ul>
+            
+            <h2>Attractions naturelles</h2>
+            <ul>
+                <li>Glacier Perito Moreno - Icebergs qui se détachent</li>
+                <li>Mont Fitz Roy - Pic emblématique des randonneurs</li>
+                <li>Lac Argentino - Plus grand lac d'Argentine</li>
+                <li>Cape Horn - Passage légendaire</li>
+                <li>Détroit de Magellan - Route historique</li>
+                <li>Péninsule Valdés - Observation des baleines</li>
+            </ul>
+            
+            <h2>Faune unique</h2>
+            <ul>
+                <li>Manchots de Magellan</li>
+                <li>Guanacos - Cousin du lama</li>
+                <li>Condors des Andes - Plus grand oiseau volant</li>
+                <li>Pumas - Prédateurs de la région</li>
+                <li>Baleines franches australes</li>
+                <li>Nandous - Autruches d'Amérique du Sud</li>
+            </ul>
+            
+            <h2>Conseils pour randonneurs</h2>
+            <ul>
+                <li>Haute saison: Décembre à Février (été austral)</li>
+                <li>Prévoyez des vêtements coupe-vent et imperméables</li>
+                <li>Réservez les refuges à l'avance en haute saison</li>
+                <li>Circuit W ou O à Torres del Paine (4-8 jours)</li>
+                <li>Adaptez-vous à l'altitude progressivement</li>
+                <li>Respectez les règles des parcs nationaux</li>
+            </ul>
+            
+            <h2>Villes de départ</h2>
+            <ul>
+                <li>El Calafate (Argentine) - Pour le glacier Perito Moreno</li>
+                <li>Puerto Natales (Chili) - Pour Torres del Paine</li>
+                <li>Ushuaia (Argentine) - Ville la plus australe</li>
+                <li>El Chaltén (Argentine) - Capitale de la randonnée</li>
+                <li>Punta Arenas (Chili) - Port sur le détroit de Magellan</li>
+            </ul>
+            
+            <h2>Spécialités locales</h2>
+            <ul>
+                <li>Cordero al asador - Agneau rôti à la croix</li>
+                <li>Curanto - Plat traditionnel chilien</li>
+                <li>Empanadas - Chaussons farcis</li>
+                <li>Calafate - Baie locale (liqueur et confiture)</li>
+                <li>Mate - Boisson traditionnelle argentine</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

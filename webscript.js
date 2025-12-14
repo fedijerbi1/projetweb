@@ -4,19 +4,21 @@ let currentIndex = 0;
 const AI_API_CONFIG = {
     gemini: {
         url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
-        key: 'AIzaSyABwDkLBj2OF68kWpp0nDkU4E_H3OHg-dI',
+        key: 'AIzaSyAbKnBVgb3SdjKZIHAd2JhFHB-cb0I6ZPE',
         model: 'gemini-2.5-flash'
     }
 };
 
 
 const destinations = {
-    paris: { name: "Paris", description: "La Ville Lumière avec ses monuments emblématiques" },
+    barcelone: { name: "Barcelone", description: "La Ville Lumière avec ses monuments emblématiques" },
     tokyo: { name: "Tokyo", description: "Mélange de tradition et modernité" },
-    bali: { name: "Bali", description: "Plages paradisiaques et spiritualité" },
-    newyork: { name: "New York", description: "La ville qui ne dort jamais" },
-    rome: { name: "Rome", description: "3000 ans d'histoire" },
-    dubai: { name: "Dubaï", description: "Luxe et architecture futuriste" }
+    Santorin: { name: "Santorin", description: "Île grecque célèbre pour ses couchers de soleil" },
+    istanbul: { name: "Istanbul", description: "Ville historique au carrefour de l'Europe et de l'Asie" },
+    costarica: { name: "Costa_Rica", description: "Nature luxuriante et biodiversité" },
+    patagonie: { name: "Patagonie", description: "Paysages sauvages et nature préservée" }, 
+    florence: { name: "Florence", description: "Berceau de la Renaissance et art exceptionnel" },
+    islande: { name: "Islande", description: "Paysages volcaniques et aurores boréales" }
 };
 
 // Attendre que le DOM soit chargé
@@ -97,7 +99,7 @@ function getAIRecommendations(answers) {
     const requestData = {
         contents: [{
             parts: [{
-                text: `Tu es un expert en voyages. Recommande 3 destinations parmi: paris, tokyo, bali, newyork, rome, dubai.
+                text: `Tu es un expert en voyages. Recommande 3 destinations parmi: barcelone, tokyo, santorin, istanbul, costarica, patagonie, florence, islande.
 
 Profil de l'utilisateur:
 - Budget: ${answers.budget}
@@ -106,7 +108,7 @@ Profil de l'utilisateur:
 - Climat préféré: ${answers.climat}
 - Passion: ${answers.passion}
 
-Réponds UNIQUEMENT avec 3 destinations séparées par des virgules (exemple: paris,tokyo,bali). Rien d'autre.`
+Réponds UNIQUEMENT avec 3 destinations séparées par des virgules (exemple: barcelone,tokyo,santorin). Rien d'autre.`
             }]
         }],
         generationConfig: {
@@ -156,7 +158,7 @@ function processAIResponse(response) {
         if (destNames.length > 0) {
             let message = ' VOS DESTINATIONS RECOMMANDÉES:\n\n'; 
             for (let i =0 ; i<destNames.length ;i++ ) { 
-              const medal = ['🥇', '🥈', '🥉'][i]; 
+             
               if (!destinations[destNames[i]]) continue;
                 const dest = destinations[destNames[i]];
                 const reason = dest.description;
@@ -168,10 +170,11 @@ function processAIResponse(response) {
                         padding: 15px; 
                         background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
                         border-radius: 8px;
-                        border-left: 4px solid #667eea;
+                        border-left: 4px solid #2d6a4f;
                     ">
                         <div style="font-size: 20px; margin-bottom: 8px;">
-                            ${medal} <strong>${dest.name}</strong>
+                             <strong>${dest.name}</strong> 
+                             <a href="${dest.name}.html" style="font-size: 14px; margin-left: 10px; color: #1d3557; text-decoration: underline;">En savoir plus</a>
                         </div>
                         
                         <div style="color: #666;">
