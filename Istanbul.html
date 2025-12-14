@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Istanbul - Informations</title>
+    <link rel="stylesheet" href="destinationStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="weatherScript.js"></script>
+    <script>
+        window.onload = function() {
+            getWeather("Istanbul");
+        };
+    </script>
+</head>
+<body> 
+    <header>
+        <nav>
+            <a href="destination.html">Retour aux destinations</a>
+        </nav>
+    </header>
+    <div class="gallery">
+        <img src="istanbul1.jpg" alt="Mosquée bleue d'Istanbul">
+        <img src="istanbul2.jpg" alt="Bazar d'Istanbul">
+        <img src="istanbul3.jpg" alt="Bosphore">
+    </div>
+    
+    <div class="contrainer">
+        <div id="istanbul-info">
+            <h1>🇹🇷 Istanbul, Turquie</h1>
+            
+            <h2>Météo actuelle</h2>
+            <div id="weather-container">
+                <p>Chargement de la météo...</p>
+            </div>
+            
+            <h2>Informations générales</h2>
+            <ul>
+                <li><strong>Pays:</strong> Turquie</li>
+                <li><strong>Continent:</strong> Europe/Asie</li>
+                <li><strong>Population:</strong> ~15 million d'habitants</li>
+                <li><strong>Langue:</strong> Turc</li>
+                <li><strong>Monnaie:</strong> Lire turque (₺)</li>
+                <li><strong>Fuseau horaire:</strong> UTC+3</li>
+            </ul>
+            
+            <h2>Attractions principales</h2>
+            <ul>
+                <li>Sainte-Sophie - Ancienne basilique et mosquée</li>
+                <li>Mosquée Bleue - Architecture ottomane impressionnante</li>
+                <li>Palais de Topkapi - Résidence des sultans ottomans</li>
+                <li>Grand Bazar - L'un des plus anciens marchés couverts</li>
+                <li>Bosphore - Détroit séparant l'Europe et l'Asie</li>
+                <li>Tour de Galata - Vue panoramique sur la ville</li>
+            </ul>
+            
+            <h2>Gastronomie</h2>
+            <ul>
+                <li>Kebab - Viande grillée traditionnelle</li>
+                <li>Baklava - Pâtisserie au miel et aux noix</li>
+                <li>Mezze - Assortiment de petites entrées</li>
+                <li>Thé turc - Boisson nationale servie dans des verres en forme de tulipe</li>
+                <li>Lokum (Turkish Delight) - Confiserie traditionnelle</li>
+            </ul>
+            
+            <h2>Conseils de voyage</h2>
+            <ul>
+                <li>Visitez Sainte-Sophie tôt le matin pour éviter la foule</li>
+                <li>Négociez les prix au Grand Bazar</li>
+                <li>Prenez une croisière sur le Bosphore au coucher du soleil</li>
+                <li>Essayez le hammam pour une expérience traditionnelle</li>
+                <li>Meilleure période: Avril-Mai et Septembre-Octobre</li>
+                <li>Respectez les codes vestimentaires dans les mosquées</li>
+            </ul>
+            
+            <h2>Transport</h2>
+            <ul>
+                <li>Métro d'Istanbul - Réseau étendu et moderne</li>
+                <li>Tramway - Idéal pour le centre historique</li>
+                <li>Ferry - Pour traverser le Bosphore</li>
+                <li>Taxi - Assurez-vous que le compteur est activé</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
