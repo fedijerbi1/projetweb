@@ -4,7 +4,7 @@ let currentIndex = 0;
 const AI_API_CONFIG = {
     gemini: {
         url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
-        key: 'AIzaSyAbKnBVgb3SdjKZIHAd2JhFHB-cb0I6ZPE',
+        key: 'AIzaSyBIakx1YIcVtQnnrclficvzZrkHHMPVUVA',
         model: 'gemini-2.5-flash'
     }
 };
@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Appeler l'IA avec les réponses
             getAIRecommendations(answers);
         });
     }
