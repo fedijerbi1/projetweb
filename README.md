@@ -1,28 +1,30 @@
-# Projet Web — Commandes Git
+# Projet Web — travelPlanner 
 
-## Installation Git
-https://git-scm.com/downloads ou // terminale : Avec winget (Windows 10/11) : winget install --id Git.Git -e
+## Introduction
+Le projet Travel Planner est une application web complète conçue pour aider les utilisateurs
+à plani er leurs voyages de manière intelligente et personnalisée. Cette plateforme combine une
+interface utilisateur intuitive avec des technologies modernes pour o rir une expérience de pla
+ni cation de voyage innovante
+## Technolgie utlise 
+  
+HTML5 : Structure sémantique des pages pour une meilleure accessibilité et SEO
+CSS3 : Styles avancés avec animations, transitions et design responsive
+JavaScript (Vanilla) : Logique client et interactions dynamiques sans dépendances externes
+## APIs et Services Externes
+L'application s'intègre à plusieurs services externes pour enrichir l'expérience utilisateur.
+Google Gemini AI API : Pour les recommandations personnalisées de destinations
+OpenWeatherMap API : Pour les données météorologiques en temps réel
+SweetAlert2 : Pour les modales et noti cations élégantes
+Remix Icons : Pour les icônes modernes
+Font Awesome : Pour les icônes complémentaires
+## Méthodes de Communication
+Les communications asynchrones avec les APIs externes sont gérées de manière e cace.
+AJAX (XMLHttpRequest) : Pour les requêtes asynchrones vers les APIs externes (Gemini Ai API , OpenWeatherMap API ) 
 
-## Config (une seule fois)
-git config --global user.name "TonNom"
-git config --global user.email "ton-email"
-
-## Cloner le projet
-git clone https://github.com/fedijerbi1/projetweb.git
-;cd projetweb
-
-## Créer/aller dans une branche
-git checkout -b nom-branche
-
-## Ajouter + Commit (sauvegarder modifications)
-git add .
-;git commit -m "message"
-
-## Envoyer (push)
-git push origin nom-branche
-
-## Récupérer les mises à jour (pull)
-git pull origin main
-
-## Ouvrir une Pull Request
-→ Sur GitHub (onglet **Pull Request**)
+## Architecture du Projet
+### Structure des Fichiers
+Le projet est organisé de manière modulaire pour faciliter la maintenance et l'évolution.
+8 pages HTML principales avec des rôles distincts
+4 fchiers CSS pour la séparation des préoccupations de style
+3 fchiers JavaScript pour la logique métier
+Système de navigation cohérent à travers toutes les page
