@@ -1,0 +1,27 @@
+{
+  "name": "projetweb",
+  "version": "1.0.0",
+  "description": "Le projet Travel Planner est une application web complète conçue pour aider les utilisateurs\r à plani er leurs voyages de manière intelligente et personnalisée. Cette plateforme combine une\r interface utilisateur intuitive avec des technologies modernes pour o rir une expérience de pla\r ni cation de voyage innovante\r ## Technolgie utlise",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedijerbi1/projetweb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedijerbi1/projetweb/issues"
+  },
+  "homepage": "https://github.com/fedijerbi1/projetweb#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1"
+  }
+}
